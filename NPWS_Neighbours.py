@@ -23,3 +23,24 @@ arcpy.SelectLayerByAttribute_management('region_lyr', "CLEAR_SELECTION")
 arcpy.Clip_analysis(region_select,estate, clip_estate,)
 arcpy.Buffer_analysis(clip_estate, buffer_out, "3000 METERS", "FULL", "ROUND", "ALL")
 arcpy.Clip_analysis(holding, buffer_out, holding_clip)
+
+#zipfile
+import shutil
+import os
+from subprocess import call
+from zipfile import *
+zip_loc = 'B:\\NPWS_neighbours\\NPWS'
+if not os.path.exists (zip_loc):
+    os.makedirs(zip_loc)
+robo_loc = 'B:\\NPWS_neighbours\\FGDB\\'
+zip_out = 'B:\\NPWS_neighbours\\NPWS\\'
+call(["robocopy", robo_loc, zip_loc, "/S", "/Z", "/E"] )
+
+shutil.make_archive(zip_out , 'zip', zip_out)
+
+
+# zip_archive = ZipFile(zip_loc, "w")
+# zip_archive.write(zip_loc)
+# zip_archive.close();
+
+
