@@ -36,11 +36,5 @@ robo_loc = 'B:\\NPWS_neighbours\\FGDB\\'
 zip_out = 'B:\\NPWS_neighbours\\NPWS\\'
 call(["robocopy", robo_loc, zip_loc, "/S", "/Z", "/E"] )
 
-shutil.make_archive(zip_out , 'zip', zip_out)
-
-
-# zip_archive = ZipFile(zip_loc, "w")
-# zip_archive.write(zip_loc)
-# zip_archive.close();
-
+shutil.make_archive("B:\NPWS_neighbours\NPWS\NPWS_Neighbours.gdb" , 'zip', zip_out)
 
