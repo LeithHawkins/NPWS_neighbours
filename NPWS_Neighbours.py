@@ -23,4 +23,3 @@ arcpy.SelectLayerByAttribute_management('region_lyr', "CLEAR_SELECTION")
 arcpy.Clip_analysis(region_select,estate, clip_estate,)
 arcpy.Buffer_analysis(clip_estate, buffer_out, "3000 METERS", "FULL", "ROUND", "ALL")
 arcpy.Clip_analysis(holding, buffer_out, holding_clip)
-
